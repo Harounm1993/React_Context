@@ -1,19 +1,35 @@
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
 import ReactDOM from "react-dom";
 
+const NameContext = createContext("World");
+
 function App() {
-  return <Child name="Ben"></Child>;
+  const [name, setName] = useState("");
+
+  return (
+    <>
+      <input
+        type="text"
+        placeholder="whats ya name"
+        onChange={(e) => setName(e.target.value)}
+      ></input>
+      <NameContext.Provider value={name}>
+        <Child></Child>
+      </NameContext.Provider>
+    </>
+  );
 }
 
-function Child({ name }) {
-  return <Grandchild name={name}></Grandchild>;
+function Child() {
+  return <Grandchild></Grandchild>;
 }
 
-function Grandchild({ name }) {
-  return <GreatGrandchild name={name}></GreatGrandchild>;
+function Grandchild() {
+  return <GreatGrandchild></GreatGrandchild>;
 }
 
-function GreatGrandchild({ name }) {
+function GreatGrandchild() {
+  const name = useContext(NameContext);
   return (
     <div style={{ width: "300px" }}>
       <h1>Hello {name}!</h1>
