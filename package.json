@@ -1,0 +1,19 @@
+{
+  "name": "m",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task1": "parcel task1/index.html",
+    "task2": "parcel task2/index.html",
+    "task3": "parcel task3/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
