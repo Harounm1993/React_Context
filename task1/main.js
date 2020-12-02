@@ -8,12 +8,12 @@ function App() {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="whats ya name"
-        onChange={(e) => setName(e.target.value)}
-      ></input>
       <NameContext.Provider value={name}>
+        <input
+          type="text"
+          placeholder="whats ya name"
+          onChange={(e) => setName(e.target.value)}
+        ></input>
         <Child></Child>
       </NameContext.Provider>
     </>
